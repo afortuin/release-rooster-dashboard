@@ -1,0 +1,19 @@
+{
+  "name": "release-rooster-dashboard",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c amber,cyan \"npm run dev -w @release-rooster/api\" \"npm run dev -w @release-rooster/web\"",
+    "build": "npm run build -w @release-rooster/shared && npm run build -w @release-rooster/api && npm run build -w @release-rooster/web",
+    "scrape": "npm run scrape -w @release-rooster/api",
+    "start": "npm run start -w @release-rooster/api"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "typescript": "^5.8.3"
+  }
+}

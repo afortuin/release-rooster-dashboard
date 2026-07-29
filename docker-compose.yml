@@ -1,0 +1,15 @@
+services:
+  rooster:
+    build: .
+    ports:
+      - "8787:8787"
+    environment:
+      PORT: "8787"
+      DATABASE_PATH: /data/rooster.db
+      # Optional: auto-refresh every hour
+      # SCRAPE_INTERVAL_MS: "3600000"
+    volumes:
+      - rooster-data:/data
+
+volumes:
+  rooster-data:

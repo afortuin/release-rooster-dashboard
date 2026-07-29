@@ -1,0 +1,143 @@
+areas:
+  - id: comics
+    name: Comic Books
+    interests:
+      - id: news
+        label: News
+      - id: stores
+        label: Stores
+    sources:
+      - id: comics-beat
+        areaId: comics
+        name: Comics Beat
+        type: rss
+        url: https://www.comicsbeat.com/feed/
+        interestIds: [news]
+      - id: bleeding-cool
+        areaId: comics
+        name: Bleeding Cool
+        type: rss
+        url: https://bleedingcool.com/feed/
+        interestIds: [news]
+      - id: cbr
+        areaId: comics
+        name: CBR
+        type: rss
+        url: https://www.cbr.com/feed/
+        interestIds: [news]
+      - id: tcj
+        areaId: comics
+        name: The Comics Journal
+        type: rss
+        url: https://www.tcj.com/feed/
+        interestIds: [news]
+      - id: instocktrades
+        areaId: comics
+        name: InStockTrades
+        type: html
+        url: https://www.instocktrades.com/
+        interestIds: [stores]
+        options:
+          itemSelector: ".item"
+          titleSelector: "img.itemimg"
+          titleAttribute: alt
+          linkSelector: "a"
+          imageSelector: "img.itemimg"
+          baseUrl: https://www.instocktrades.com
+      - id: third-eye
+        areaId: comics
+        name: Third Eye Comics
+        type: html
+        url: https://shop.thirdeyecomics.com/collections/all
+        interestIds: [stores]
+        options:
+          itemSelector: ".product-card, .card-wrapper, .grid__item, .product-item"
+          titleSelector: ".card__heading a, .full-unstyled-link, a"
+          linkSelector: "a"
+          imageSelector: "img"
+          baseUrl: https://shop.thirdeyecomics.com
+
+  - id: board-games
+    name: Board Games
+    interests:
+      - id: news
+        label: News
+      - id: stores
+        label: Stores
+    sources:
+      - id: boardgamewire
+        areaId: board-games
+        name: Board Game Wire
+        type: rss
+        url: https://boardgamewire.com/index.php/feed/
+        interestIds: [news]
+      - id: bgg-blog
+        areaId: board-games
+        name: BoardGameGeek Blog
+        type: rss
+        url: https://boardgamegeek.com/rss/blog/1
+        interestIds: [news]
+      - id: eric-martin
+        areaId: board-games
+        name: W. Eric Martin
+        type: rss
+        url: https://www.wericmartin.com/latest/rss/
+        interestIds: [news]
+      - id: dicebreaker
+        areaId: board-games
+        name: Dicebreaker
+        type: rss
+        url: https://www.dicebreaker.com/feed
+        interestIds: [news]
+      - id: miniature-market
+        areaId: board-games
+        name: Miniature Market
+        type: html
+        url: https://www.miniaturemarket.com/new-arrivals
+        interestIds: [stores]
+        options:
+          itemSelector: ".product-box"
+          titleSelector: ".product-name a, .product-name"
+          linkSelector: "a.product-image-link, .product-name a, a"
+          imageSelector: "img.product-image, img"
+          baseUrl: https://www.miniaturemarket.com
+      - id: gamenerdz
+        areaId: board-games
+        name: Game Nerdz
+        type: html
+        url: https://www.gamenerdz.com/new-releases
+        interestIds: [stores]
+        options:
+          # Page is JS-rendered via Storepass; selectors kept for when SSR appears or a custom scraper is added.
+          itemSelector: ".product-box, .product, [data-product-id]"
+          titleSelector: ".product-name a, .card-title, a"
+          linkSelector: "a"
+          imageSelector: "img"
+          baseUrl: https://www.gamenerdz.com
+
+  - id: video-games
+    name: Video Games
+    interests:
+      - id: news
+        label: News
+      - id: stores
+        label: Stores
+    sources:
+      - id: kotaku
+        areaId: video-games
+        name: Kotaku
+        type: rss
+        url: https://kotaku.com/rss
+        interestIds: [news]
+      - id: polygon
+        areaId: video-games
+        name: Polygon
+        type: rss
+        url: https://www.polygon.com/rss/index.xml
+        interestIds: [news]
+      - id: ign
+        areaId: video-games
+        name: IGN
+        type: rss
+        url: https://feeds.ign.com/ign/all
+        interestIds: [news]
