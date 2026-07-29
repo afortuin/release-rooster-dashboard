@@ -51,9 +51,9 @@ areas:
         url: https://shop.thirdeyecomics.com/collections/all
         interestIds: [stores]
         options:
-          itemSelector: ".product-card, .card-wrapper, .grid__item, .product-item"
-          titleSelector: ".card__heading a, .full-unstyled-link, a"
-          linkSelector: "a"
+          itemSelector: ".product-card, .card-wrapper"
+          titleSelector: ".card__heading a, .full-unstyled-link"
+          linkSelector: ".card__heading a, .full-unstyled-link, a"
           imageSelector: "img"
           baseUrl: https://shop.thirdeyecomics.com
 

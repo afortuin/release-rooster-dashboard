@@ -25,6 +25,8 @@ export async function scrapeHtml(source: Source) {
   const drafts: ScrapedDraft[] = []
   const seen = new Set<string>()
 
+const SKIP_TITLES = /^(sold out|add to cart|add to wishlist|quick view|sale|new|view|shop now)$/i
+
   $(opts.itemSelector).each((_, el) => {
     if (drafts.length >= 40) return false
     const root = $(el)
@@ -34,7 +36,7 @@ export async function scrapeHtml(source: Source) {
       : undefined
     const title =
       titleFromAttr || titleEl.text().trim() || root.text().trim().split('\n')[0]?.trim()
-    if (!title || title.length < 3) return
+    if (!title || title.length < 3 || SKIP_TITLES.test(title)) return
 
     const linkEl = root.find(opts.linkSelector!).first()
     const href =
